@@ -87,3 +87,7 @@ CPU: 11%
 CPU Usage: [ccccc                                             ] 11%
 
 ```
+
+
+# New Colorfull version 0.2
+![image](https://github.com/dogukaneren/Util-Lite/assets/46019536/85251aef-ca2d-4a4d-9238-9e27f38a8043)
