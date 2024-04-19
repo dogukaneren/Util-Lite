@@ -25,7 +25,15 @@ generate_cpu_graph() {
   echo ""
   echo "CPU Cores: $cpu_cores"
   echo "CPU: ${cpu_percentage}%"
-  echo "CPU Usage: $graph"
+  
+  # Set color based on CPU percentage
+  if (( cpu_percentage >= 70 )); then
+    echo -e "CPU Usage: \033[0;31m$graph\033[0m"
+  elif (( cpu_percentage >= 40 )); then
+    echo -e "CPU Usage: \033[0;33m$graph\033[0m"
+  else
+    echo -e "CPU Usage: \033[0;32m$graph\033[0m"
+  fi
 }
 
 generate_usage_graph() {
@@ -50,7 +58,15 @@ generate_usage_graph() {
 
   echo ""
   echo "$label: ${used}MB / ${total}MB"
-  echo "${label} Usage: $graph"
+
+  # Set color based on usage percentage
+  if (( used_percentage >= 70 )); then
+    echo -e "${label} Usage: \033[0;31m$graph\033[0m"
+  elif (( used_percentage >= 40 )); then
+    echo -e "${label} Usage: \033[0;33m$graph\033[0m"
+  else
+    echo -e "${label} Usage: \033[0;32m$graph\033[0m"
+  fi
 }
 
 while getopts "c:r:s:" opt; do
